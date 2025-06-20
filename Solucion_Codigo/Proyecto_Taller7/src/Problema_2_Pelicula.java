@@ -21,14 +21,38 @@ public class Problema_2_Pelicula {
 }
 
 class SoportePelicula{
-    public double precioAlq;}
+    public double precioAlq;
+    public SoportePelicula(double precioAlq) {
+        this.precioAlq = precioAlq; }
+    public String toString() {
+        return "SoportePelicula{" + "precioAlq=" + precioAlq + '}';
+    }
+}
 class DVD extends SoportePelicula{
     public String idioma[];
     public ArrayList<Pelicula> pelicula;
+    public DVD(String[] idioma, ArrayList<Pelicula> pelicula, double precioAlq) {
+        super(precioAlq);
+        this.idioma = idioma;
+        this.pelicula = pelicula;
+    }
     public void calcularPrecioAlq(){
         this.precioAlq += (this.precioAlq * 0.1);
-    }}
+    }
+    public String toString() {
+        return "DVD{" + "idioma=" + idioma + ", pelicula=" + pelicula + '}';
+    }
+}
 class VHS extends SoportePelicula{
     public String idioma;
-    public Pelicula pelicula;}
+    public Pelicula pelicula;
+    public VHS(String idioma, Pelicula pelicula, double precioAlq) {
+        super(precioAlq);
+        this.idioma = idioma;
+        this.pelicula = pelicula;
+    }
+    public String toString() {
+        return "VHS{" + "idioma=" + idioma + ", pelicula=" + pelicula + '}';
+    }
+}
 class Pelicula{}
