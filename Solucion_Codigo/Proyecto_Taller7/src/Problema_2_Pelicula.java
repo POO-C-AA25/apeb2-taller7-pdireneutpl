@@ -16,7 +16,10 @@ Los escenarios de prueba pueden darse para el alquiler de una o varias peliculas
 import java.util.ArrayList;
 public class Problema_2_Pelicula {
     public static void main(String[] args) {
-        
+        Pelicula pelicula1 = new Pelicula("Stic");
+        Pelicula pelicula2 = new Pelicula("La monja");
+        VHS vhs1 = new VHS("ESP", pelicula1, 1.5);
+        System.out.println(vhs1);
     }
 }
 
@@ -40,7 +43,7 @@ class DVD extends SoportePelicula{
         this.precioAlq += (this.precioAlq * 0.1);
     }
     public String toString() {
-        return "DVD{" + "idioma=" + idioma + ", pelicula=" + pelicula + '}';
+        return "DVD{" + "idioma=" + idioma + ", pelicula=" + pelicula + "}  " + super.toString();
     }
 }
 class VHS extends SoportePelicula{
@@ -52,7 +55,14 @@ class VHS extends SoportePelicula{
         this.pelicula = pelicula;
     }
     public String toString() {
-        return "VHS{" + "idioma=" + idioma + ", pelicula=" + pelicula + '}';
+        return "VHS{" + "idioma=" + idioma + ", pelicula=" + pelicula + "}   " + super.toString();
     }
 }
-class Pelicula{}
+class Pelicula{
+    public String titulo;
+    public Pelicula(String titulo) {
+        this.titulo = titulo;    }
+    public String toString() {
+        return "Pelicula{" + "titulo=" + titulo + '}';
+    }
+}
